@@ -25,6 +25,7 @@
                 <td><span th:text="${user.roleGroup}"></span></td>
             </tr>
         </table>
+        <a th:href="${'/users/edit/' + user.id}" class="btn btn-default">Edit</a>
         <a href="/users" class="btn btn-default">Users Home</a>
     </div>
 </body>

@@ -24,12 +24,14 @@
                     <td th:text="${user.name}"></td>
                     <td th:text="${user.roleGroup}"></td>
                     <td>
-                        <a th:href="${'/users/' + user.id}">Details</a>
-                        <a th:href="${'/users/delete/' + user.id}">Delete</a>
+                        <a class="btn btn-default" th:href="${'/users/' + user.id}">Details</a>
+                        <a class="btn btn-default" th:href="${'/users/delete/' + user.id}">Delete</a>
                     </td>
                 </tr>
             </table>
         </div>
+        <a class="btn btn-default" href="/users/new">Add New User</a>
     </div>
 </body>
+
 </html>

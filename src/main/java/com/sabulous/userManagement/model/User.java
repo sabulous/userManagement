@@ -1,9 +1,15 @@
 package com.sabulous.userManagement.model;
 
 public class User {
-    private int id;
+    private Integer id;
     private String name;
     private String roleGroup;
+
+    public User() {}
+
+    public User(int id) {
+        this.id  = id;
+    }
 
     public User(int id, String name, String roleGroup) {
         this.id = id;
@@ -17,45 +23,27 @@ public class User {
         System.out.println("Role Group : " + this.roleGroup);
     }
 
-    /**
-     * @return the id
-     */
-    public int getId() {
+    public Integer getId() {
         return id;
     }
 
-    /**
-     * @return the roleGroup
-     */
     public String getRoleGroup() {
         return roleGroup;
     }
 
-    /**
-     * @param roleGroup the roleGroup to set
-     */
     public void setRoleGroup(String roleGroup) {
         this.roleGroup = roleGroup;
     }
 
-    /**
-     * @return the name
-     */
     public String getName() {
         return name;
     }
 
-    /**
-     * @param name the name to set
-     */
     public void setName(String name) {
         this.name = name;
     }
 
-    /**
-     * @param id the id to set
-     */
-    public void setId(int id) {
+    public void setId(Integer id) {
         this.id = id;
     }
 }
