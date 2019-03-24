@@ -5,8 +5,9 @@ import com.sabulous.userManagement.model.User;
 
 public interface UserService {
     List<User> getAllUsers();
-    User getUser(int id);
-    void addUser(User user);
+    User getUserById(int id);
+    User addOrEditUser(User user);
     void deleteUser(int id);
     void printUsers();
+    int findNextId();
 }
