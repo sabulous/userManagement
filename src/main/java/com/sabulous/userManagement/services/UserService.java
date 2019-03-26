@@ -9,5 +9,5 @@ public interface UserService {
     User addOrEditUser(User user);
     void deleteUser(int id);
     void printUsers();
-    int findNextId();
+    Integer findNextId();
 }

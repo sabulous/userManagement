@@ -8,9 +8,11 @@ import java.util.Map;
 
 import com.sabulous.userManagement.model.User;
 
+import org.springframework.context.annotation.Profile;
 import org.springframework.stereotype.Service;
 
 @Service
+@Profile("map")
 class UserServiceImpl implements UserService {
 
     private Map<Integer, User> users;
@@ -22,7 +24,10 @@ class UserServiceImpl implements UserService {
     private void initUsers() {
         users = new HashMap<>();
         for(int i = 0; i < 5; i++) {
-            User user = new User(findNextId(), "User-" + i, "RoleGroup-" + i);
+            User user = new User();
+            user.setId(findNextId());
+            user.setName("user" + i);
+            user.setRoleGroup("role" + i);
             addOrEditUser(user);
         }
     }
@@ -62,7 +67,7 @@ class UserServiceImpl implements UserService {
     }
 
     @Override
-    public int findNextId() {
+    public Integer findNextId() {
         if(users.isEmpty())
             return 0;
         return Collections.max(users.keySet()) + 1;
